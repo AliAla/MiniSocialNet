@@ -12,7 +12,12 @@ package main;
 		public class MiniNet {
 
 			public static void main(String[] args) {
-				// TODO public static void main(String[] args) {
+//				Person person1=new Adult("Ali",23,'m');
+//				Person person2=new Adult("AAli",23,'m');
+//				Driver.connect(person1, person2);
+//				System.out.println("////////////////");
+//			}
+				 {
 				int input = menu();
 				Person person1 = null;
 				Person person2 = null;
@@ -24,7 +29,7 @@ package main;
 						Driver.addPerson();
 						break;
 					case 2:
-						Driver.connect(person1, person2);
+						Driver.connect(Utility.readString("the first name"),Utility.readString("the second name"));
 						break;
 					case 3:
 						network.listEveryone();
@@ -37,7 +42,7 @@ package main;
 					input = menu();
 				}
 				System.out.println("Person added thanks " + person1.getName());
-
+				 }
 			}
 
 			private static int menu() {
@@ -50,13 +55,8 @@ package main;
 				return Utility.readInt("Enter your chooce", 0, 4);
 			}
 
-
-
-
 			
 
 
-
-	
 
 }

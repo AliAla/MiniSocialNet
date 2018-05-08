@@ -55,8 +55,10 @@ package network;
 		/*
 		 * To connect two people As
 		 */
-		public static void connect(Person person1, Person person2) {
-			person1.addConnection(new Connection(ConnectionType.Friend, person2));
+		public static void connect(String fName, String sName) {
+			Person person=Network.getProfile(fName);
+			Person person2=Network.getProfile(sName);
+			person.addConnection(new Connection(ConnectionType.Friend, person2));
 
 		}
 

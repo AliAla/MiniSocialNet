@@ -3,6 +3,8 @@
  */
 package user;
 
+import java.util.HashSet;
+
 /**
  * @author alial
  *
@@ -13,8 +15,9 @@ package user;
 	import java.util.TreeSet;
 
 	import connection.Connection;
+import connection.ConnectionType;
 
-	public class Person {
+	public class Person  {
 		/**
 		 * name of a person
 		 */
@@ -36,7 +39,7 @@ package user;
 		 * image
 		 */
 		private byte [] photo;
-		Set <Connection> connection=new TreeSet<>();
+		Set <Connection> connection=new HashSet<>();
 		
 		public Person(String name, int age, char gender) {
 			this.name = name;
@@ -79,7 +82,7 @@ package user;
 		}
 		public void addConnection(Connection conns)
 		{
-			conns.getPerson().(this);
+			//conns.getPerson().addConnection(new Connection(ConnectionType.Friend, this));
 			connection.add(conns);
 			System.out.println("Connected Person");
 		}
