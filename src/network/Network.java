@@ -34,7 +34,8 @@ package network;
 			if (profile.containsKey(name)) {
 				Set<Entry<String, Person>> entires = profile.entrySet();
 				for (Entry<String, Person> ent : entires) {
-					System.out.println(ent.getKey() + " ==> " + ent.getValue());
+//					System.out.println(ent.getKey() + " ==> " + ent.getValue());
+//					System.out.println(person.toString());
 					
 					return ent.setValue(person);
 

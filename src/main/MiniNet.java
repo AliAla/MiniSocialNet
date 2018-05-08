@@ -14,14 +14,18 @@ package main;
 			public static void main(String[] args) {
 //				Person person1=new Adult("Ali",23,'m');
 //				Person person2=new Adult("AAli",23,'m');
-//				Driver.connect(person1, person2);
+//				Driver.connect(person1, person2,"Friend");
+//				Driver.connect(person1, person2,"Parent");
 //				System.out.println("////////////////");
 //			}
+				
 				 {
 				int input = menu();
-				Person person1 = null;
-				Person person2 = null;
+				
+				
 				Network network = new Network();
+				Person person=null;
+				Person person2=null;
 
 				while (input != 0) {
 					switch (input) {
@@ -29,7 +33,8 @@ package main;
 						Driver.addPerson();
 						break;
 					case 2:
-						Driver.connect(Utility.readString("the first name"),Utility.readString("the second name"));
+						Driver.connect(person=network.getProfile(Utility.readString("the first name")),person2=network.getProfile(Utility.readString("the second name"))
+								      ,Utility.readString("the relation"));
 						break;
 					case 3:
 						network.listEveryone();
@@ -41,7 +46,7 @@ package main;
 					}
 					input = menu();
 				}
-				System.out.println("Person added thanks " + person1.getName());
+				
 				 }
 			}
 

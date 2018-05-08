@@ -87,6 +87,19 @@ import connection.ConnectionType;
 			System.out.println("Connected Person");
 		}
 		
+		/* (non-Javadoc)
+		 * @see java.lang.Object#toString()
+		 */
+		@Override
+		public String toString() {
+					
+		        return "Name of the person.:" + this.name + ",, "
+		                + "Gender :" + this.gender + ",, " + "Age :"
+		                + this.age ;
+		    
+		}
+		
+		
 		
 		
 		

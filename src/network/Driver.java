@@ -27,7 +27,7 @@ package network;
 	public class Driver {
 		static Scanner input = new Scanner(System.in);
 		private static Network network = new Network();
-
+		
 		public static void addPerson() {
 
 			Person person = null;
@@ -55,13 +55,13 @@ package network;
 		/*
 		 * To connect two people As
 		 */
-		public static void connect(String fName, String sName) {
-			Person person=Network.getProfile(fName);
-			Person person2=Network.getProfile(sName);
-			person.addConnection(new Connection(ConnectionType.Friend, person2));
+		public static void connect(Person person, Person person2, String relation) {
+			ConnectionType connectionType =ConnectionType.valueOf(relation);
+			person.addConnection(new Connection(connectionType, person2));
+			System.out.println("connected as "+ relation);
 
 		}
-
+		
 	
 
 

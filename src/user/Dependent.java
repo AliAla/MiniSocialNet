@@ -3,6 +3,7 @@
  */
 package user;
 
+import connection.ConnectionType;
 
 /**
  * @author alial
@@ -16,7 +17,13 @@ public class Dependent extends Person {
 		super(name, age, gender);
 		this.father= father;
 		this.mother= mother;
+		if()
 		// TODO Auto-generated constructor stub
 	}
-	
+	private boolean isConnected(Person person1,Person person2)
+	{
+		
+		return false;
+		
+	}
 }
