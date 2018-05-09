@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-<<<<<<< HEAD
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
-=======
-	<classpathentry kind="src" path="MiniSocialNet"/>
->>>>>>> 8061fdeca458f23d5b5d8076975126ea14424d3f
 	<classpathentry kind="output" path="bin"/>
 </classpath>

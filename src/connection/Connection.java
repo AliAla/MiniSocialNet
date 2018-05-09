@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
 package connection;
+=======
+package src.connection;
+>>>>>>> 8061fdeca458f23d5b5d8076975126ea14424d3f
 
 /**
  * @author alial
