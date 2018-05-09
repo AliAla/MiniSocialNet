@@ -1,7 +1,5 @@
-/**
- * 
- */
-package connection;
+
+package src.connection;
 
 /**
  * @author alial
