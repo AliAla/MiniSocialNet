@@ -17,7 +17,8 @@ public class Dependent extends Person {
 		super(name, age, gender);
 		this.father= father;
 		this.mother= mother;
-		if()
+		System.out.println("zzzzzzzz");
+	//	if()
 		// TODO Auto-generated constructor stub
 	}
 	private boolean isConnected(Person person1,Person person2)

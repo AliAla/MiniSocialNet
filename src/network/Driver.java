@@ -33,33 +33,47 @@ package network;
 			Person person = null;
 			System.out.println("Enter your name : ");
 			String name = input.nextLine();
-			// System.out.println("Enter your name : ");
+			
 			char gender = Utility.readGender();
 
 			int age = Utility.readInt("Enter your age : ", 0, 150);
-			if (Utility.isAdult(age)) {
-				person = new Adult(name, age, gender);
-			} else {
-				String mother = Utility.readString("Please enter the name of mother or father: ");
-				Person motherPro = Network.getProfile(mother);
-				String father = Utility.readString("Please enter the name of mother or father: ");
+			if (!Utility.isAdult(age)) {
+				String father = Utility.readString("Please enter your father's name : ");
 				Person fatherPro = Network.getProfile(father);
+				String mother = Utility.readString("Please enter your mother's name : ");
+				Person motherPro = Network.getProfile(mother);
 				if (motherPro != null && fatherPro != null)
-					person = new Dependent(name, age, gender, motherPro, fatherPro);
-			}
-
+					person = new Dependent(name, age, gender,fatherPro, motherPro);
+				
+			} else 
+				person = new Adult(name, age, gender);
+						
 			network.addPerson(person);
 
 		}
 
 		/*
-		 * To connect two people As
+		 * To connect two people
 		 */
 		public static void connect(Person person, Person person2, String relation) {
-			ConnectionType connectionType =ConnectionType.valueOf(relation);
+			ConnectionType connectionType;
+			if(Utility.isAdult(person.getAge()) && Utility.isAdult(person2.getAge()))
+					{
+			 connectionType =ConnectionType.valueOf(relation);
 			person.addConnection(new Connection(connectionType, person2));
 			System.out.println("connected as "+ relation);
-
+					}
+			else if((!Utility.isAdult(person.getAge())&& person.getAge()>2) || (!Utility.isAdult(person2.getAge())&& person2.getAge()>2))
+			{
+				if(Utility.ageLimit(person.getAge(), person2.getAge())&& relation !="Parent" && relation != "Colleague")
+				{
+					connectionType =ConnectionType.valueOf(relation);
+				    person.addConnection(new Connection(connectionType, person2));
+				    System.out.println("connected as "+ relation);
+				}
+					
+			}
+				
 		}
 		
 	

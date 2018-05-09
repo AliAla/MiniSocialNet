@@ -27,6 +27,18 @@ package network;
 		public static boolean isAdult(int age){
 			return age > 16;
 		}
+		/**
+		 * check if age is Dependent in limit age to make friend
+		 * @param age age
+		 *  @param age age
+		 * @return true or false
+		 */
+		public static boolean ageLimit(int age1,int age2)
+		{
+			if((age1<age2+3)&&(age1>age2-3))	
+			   return true;
+			return false;
+		}
 		
 		/**
 		 * read gender
@@ -138,6 +150,8 @@ package network;
 			
 			return string;
 		}
+
+		
 	
 
 }

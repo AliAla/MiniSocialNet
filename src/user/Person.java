@@ -3,7 +3,9 @@
  */
 package user;
 
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Iterator;
 
 /**
  * @author alial
@@ -39,7 +41,8 @@ import connection.ConnectionType;
 		 * image
 		 */
 		private byte [] photo;
-		Set <Connection> connection=new HashSet<>();
+		static Set <Connection> connection=new HashSet<>();
+		ConnectionType connectionType;
 		
 		public Person(String name, int age, char gender) {
 			this.name = name;
@@ -82,9 +85,17 @@ import connection.ConnectionType;
 		}
 		public void addConnection(Connection conns)
 		{
-			//conns.getPerson().addConnection(new Connection(ConnectionType.Friend, this));
+			conns.getPerson().addConnection(new Connection(connectionType, this));
 			connection.add(conns);
 			System.out.println("Connected Person");
+		}
+		public static void hasConnection()
+		{
+			connection.forEach(Person -> System.out.println(Person));
+//			if(connection.contains(person))
+//				
+//			return ;
+			
 		}
 		
 		/* (non-Javadoc)
@@ -99,10 +110,22 @@ import connection.ConnectionType;
 		    
 		}
 		
+		public static void s()
+		{
+			
+			Iterator<Connection> iterator = connection.iterator();
+			
+	        
+			while (iterator.hasNext()){
+				 Object val = iterator.next();
+				System.out.println(" Iterating over HashSet in Java current object: " + iterator.next());
+			       
+			       // System.out.println(val);
+			
+		}
 		
 		
-		
-		
+		}	
 
 	
 

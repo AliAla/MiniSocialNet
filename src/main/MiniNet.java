@@ -12,12 +12,7 @@ package main;
 		public class MiniNet {
 
 			public static void main(String[] args) {
-//				Person person1=new Adult("Ali",23,'m');
-//				Person person2=new Adult("AAli",23,'m');
-//				Driver.connect(person1, person2,"Friend");
-//				Driver.connect(person1, person2,"Parent");
-//				System.out.println("////////////////");
-//			}
+
 				
 				 {
 				int input = menu();
@@ -41,7 +36,10 @@ package main;
 						break;
 
 					case 4:
-						Network.getProfile(Utility.readString("Type the name"));
+						Person.hasConnection();
+						/*Network.getProfile(Utility.readString("Type the name"));
+						 * 
+						 */
 						break;
 					}
 					input = menu();
